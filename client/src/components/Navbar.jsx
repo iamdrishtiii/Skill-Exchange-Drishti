@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-50 py-2">
+    <header className="bg-white shadow-lg sticky top-0 z-50 py-2 md:px-10 lg:px-20">
       <div className="flex justify-between items-center px-6 py-1">
         {/* Left: Hamburger (mobile only, logged-in only) */}
         {user && (
@@ -101,9 +101,12 @@ const Navbar = () => {
               )}
             </div>
           ) : (
-            <Link to="/auth" className="text-gray-600 hover:text-blue-500">
-              Sign in
+            <div className="flex flex-row gap-4">
+              <Link to="/about" className="pt-1">AboutUs</Link>
+              <Link to="/auth" className="text-gray-600 hover:text-blue-500">
+             <CgProfile className="text-3xl"/>
             </Link>
+            </div>
           )}
         </div>
       </div>

@@ -80,7 +80,7 @@ const Dashboard = () => {
   return (
     <>
       {token ? (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-amber-50 to-green-50 ">
+        <div className="min-h-full bg-gradient-to-br from-blue-50 via-amber-50 to-green-50 ">
           <Navbar />
           <div className="flex justify-center items-center">
             <div className="w-full max-w-[1400px]">
@@ -221,7 +221,7 @@ const Dashboard = () => {
           </div>
         </div>
       ) : (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-amber-50 to-green-50 ">
+        <div className="min-h-full bg-gradient-to-br from-blue-50 via-amber-50 to-green-50 pb-16">
           <Navbar />
           <div className="flex pt-[5%] items-center justify-center px-6">
             <div className="max-w-5xl text-center bg-white/80 backdrop-blur-md p-10 rounded-2xl shadow-lg md:flex md:flex-row">

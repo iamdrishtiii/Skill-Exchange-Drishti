@@ -36,7 +36,7 @@ const Dashboard = () => {
     .filter(
       (t) =>
         t.name.trim().toLowerCase().startsWith(Search.toLowerCase()) ||
-        t.skillsToLearn.some((skill) =>
+        t.skillsOffered.some((skill) =>
           skill.trim().toLowerCase().startsWith(Search.toLowerCase()),
         ),
     )
@@ -279,12 +279,12 @@ const Dashboard = () => {
                 <div className="w-1/2 text-xs flex flex-col px-1">
                   <label className="mb-1">I can offer:</label>
                   <select
-                    value={skillWantToOffered}
-                    onChange={(e) => setSkillWantToOffered(e.target.value)}
+                    value={skillWantToLearn}
+                    onChange={(e) => setSkillWantToLearn(e.target.value)}
                     className="border-gray-300 border-2 rounded-md p-1"
                   >
                     <option value="">Select a Skill</option>
-                    {selectedProfile.skillsOffered.map((skill) => (
+                    {selectedProfile.skillsToLearn.map((skill) => (
                       <option key={skill} value={skill}>
                         {skill}
                       </option>
@@ -294,12 +294,12 @@ const Dashboard = () => {
                 <div className="w-1/2 flex flex-col text-xs px-1">
                   <label className="mb-1">I want to learn:</label>
                   <select
-                    value={skillWantToLearn}
-                    onChange={(e) => setSkillWantToLearn(e.target.value)}
+                    value={skillWantToOffered}
+                    onChange={(e) => setSkillWantToOffered(e.target.value)}
                     className="border-gray-300 border-2 rounded-md p-1"
                   >
                     <option value="">Select a Skill</option>
-                    {selectedProfile.skillsToLearn.map((skill) => (
+                    {selectedProfile.skillsOffered.map((skill) => (
                       <option key={skill} value={skill}>
                         {skill}
                       </option>

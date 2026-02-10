@@ -17,8 +17,8 @@ const Dashboard = () => {
   const [selectedProfile, setSelectedProfile] = useState(null);
   const [Search, setSearch] = useState("");
   const [availabilityCat, setAvailabilityCat] = useState("");
-  const [skillWantToOffered, setSkillWantToOffered] = useState("");
-  const [skillWantToLearn, setSkillWantToLearn] = useState("");
+  const [skillWantToLearn, setskillWantToLearn] = useState("");
+  const [skillWantToOffer, setskillWantToOffer] = useState("");
   const [message, setMessage] = useState("");
   let token = localStorage.getItem("token");
   const navigate = useNavigate();
@@ -47,7 +47,7 @@ const Dashboard = () => {
   const handleSendReq = (e) => {
     e.preventDefault();
 
-    if (!skillWantToLearn || !skillWantToOffered) {
+    if (!skillWantToOffer || !skillWantToLearn) {
       toast.error("Please select both skills");
       return;
     }
@@ -55,15 +55,15 @@ const Dashboard = () => {
     dispatch(
       sendSwapRequest({
         receiverId: selectedProfile._id,
-        skillOffered: skillWantToOffered,
+        skillOffered: skillWantToOffer,
         skillToLearn: skillWantToLearn,
         message,
       }),
     );
 
     setOpenModal(false);
-    setSkillWantToLearn("");
-    setSkillWantToOffered("");
+    setskillWantToOffer("");
+    setskillWantToLearn("");
     setMessage("");
   };
 
@@ -279,8 +279,8 @@ const Dashboard = () => {
                 <div className="w-1/2 text-xs flex flex-col px-1">
                   <label className="mb-1">I can offer:</label>
                   <select
-                    value={skillWantToLearn}
-                    onChange={(e) => setSkillWantToLearn(e.target.value)}
+                    value={skillWantToOffer}
+                    onChange={(e) => setskillWantToOffer(e.target.value)}
                     className="border-gray-300 border-2 rounded-md p-1"
                   >
                     <option value="">Select a Skill</option>
@@ -294,8 +294,8 @@ const Dashboard = () => {
                 <div className="w-1/2 flex flex-col text-xs px-1">
                   <label className="mb-1">I want to learn:</label>
                   <select
-                    value={skillWantToOffered}
-                    onChange={(e) => setSkillWantToOffered(e.target.value)}
+                    value={skillWantToLearn}
+                    onChange={(e) => setskillWantToLearn(e.target.value)}
                     className="border-gray-300 border-2 rounded-md p-1"
                   >
                     <option value="">Select a Skill</option>
@@ -307,18 +307,18 @@ const Dashboard = () => {
                   </select>
                 </div>
               </div>
-              {(skillWantToLearn || skillWantToOffered) && (
+              {(skillWantToOffer || skillWantToLearn) && (
                 <div className="bg-blue-50 mt-2 p-2 flex flex-col items-center justify-center text-xs">
                   <div className=" flex flex-row gap-4">
                     <p className="bg-blue-600 text-white px-1 rounded-xl pb-1">
-                      {skillWantToOffered || ""}
+                      {skillWantToOffer || ""}
                     </p>{" "}
                     <FaLongArrowAltRight className="text-sm pt-1" />{" "}
                     {skillWantToLearn || ""}
                   </div>
 
                   <p className="text-blue-500">
-                    I can offer you {skillWantToOffered || ""} and want to learn{" "}
+                    I can offer you {skillWantToOffer || ""} and want to learn{" "}
                     {skillWantToLearn || ""}{" "}
                   </p>
                 </div>

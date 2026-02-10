@@ -200,13 +200,20 @@ const MyRequest = () => {
                       </span>
                     </div>
 
-                    <div className="bg-blue-50 mt-2 p-2 text-xs flex justify-center">
-                      <div className=" flex flex-row gap-4">
-                        <p className="bg-blue-600 text-white px-1 rounded-xl pb-1">
-                          {req.skillOffered || ""}
-                        </p>{" "}
-                        <FaLongArrowAltRight className="text-sm pt-1" />{" "}
-                        {req.skillToLearn || ""}
+                    <div className="bg-blue-50 mt-2 p-2 text-xs flex justify-center ">
+                      <div className="flex flex-col">
+                        <div className="flex flex-row gap-4">
+                          <p className="bg-blue-600 text-white px-1 rounded-xl pb-1">
+                            {req.skillOffered || ""}
+                          </p>{" "}
+                          <FaLongArrowAltRight className="text-sm pt-1" />{" "}
+                          {req.skillToLearn || ""}
+                        </div>
+
+                        <p className="text-blue-500">
+                          I can offer you {req.skillOffered || ""} and want to
+                          learn {req.skillToLearn || ""}{" "}
+                        </p>
                       </div>
                     </div>
 

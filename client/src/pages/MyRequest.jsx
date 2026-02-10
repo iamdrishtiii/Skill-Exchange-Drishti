@@ -13,6 +13,7 @@ import {
   fetchRequests,
   rejectRequest,
 } from "../action";
+import Footer from "../components/Footer";
 
 const MyRequest = () => {
   const dispatch = useDispatch();
@@ -280,6 +281,7 @@ const MyRequest = () => {
           )}
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

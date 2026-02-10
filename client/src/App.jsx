@@ -7,6 +7,7 @@ import Auth from "./pages/Auth";
 import MyRequest from "./pages/MyRequest";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+import About from "./pages/About";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
             <Route path="/requested" element={<MyRequest />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </BrowserRouter>
       </div>

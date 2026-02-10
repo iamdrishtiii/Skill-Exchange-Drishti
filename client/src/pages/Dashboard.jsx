@@ -9,6 +9,8 @@ import { MdOutlineTimer } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { fetchProfiles, sendSwapRequest } from "../action";
+import Banner from "../components/Banner";
+import Footer from "../components/Footer";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
@@ -82,6 +84,7 @@ const Dashboard = () => {
           <Navbar />
           <div className="flex justify-center items-center">
             <div className="w-full max-w-[1400px]">
+              <Banner />
               <h1 className="text-center text-lg mt-6 md:text-3xl font-semibold md:font-bold">
                 Find Your Perfect Skill Exchange
               </h1>
@@ -126,7 +129,7 @@ const Dashboard = () => {
                     {filterData.map((profile) => (
                       <div
                         key={profile._id}
-                        className="bg-white rounded-xl border p-6 shadow-sm"
+                        className="bg-white rounded-xl border p-6 shadow-sm hover:shadow-md hover:scale-105"
                       >
                         <div>
                           {/* Profile pic */}
@@ -351,6 +354,7 @@ const Dashboard = () => {
           </div>
         </div>
       )}
+      <Footer />
     </>
   );
 };

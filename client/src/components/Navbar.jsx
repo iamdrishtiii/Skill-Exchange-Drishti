@@ -54,6 +54,13 @@ const Navbar = () => {
               >
                 My Request
               </Link>
+              <Link
+                to="/about"
+                onClick={() => setActive("about")}
+                className={`${active === "about" ? "text-blue-600" : "text-gray-600 hover:text-blue-500"}`}
+              >
+                AboutUs
+              </Link>
             </nav>
           )}
 
@@ -124,6 +131,16 @@ const Navbar = () => {
               className={`block ${active === "request" ? "text-blue-600" : "text-gray-700"}`}
             >
               My Request
+            </Link>
+             <Link
+              to="/about"
+              onClick={() => {
+                setActive("about");
+                setIsOpen(false);
+              }}
+              className={`block ${active === "about" ? "text-blue-600" : "text-gray-700"}`}
+            >
+             AboutUs
             </Link>
           </div>
         </div>
